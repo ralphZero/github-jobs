@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px 0px #00000015;
+}
+
+.img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.imgAndJobTitle {
+    display: flex;
+    color: var(--main-text);
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 14px;
+    gap: 1.15rem;
+}
+
+.jobTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.title {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-overflow: ellipsis;
+    max-lines: 1;
+}
+
+.fulltime {
+    display: inline;
+    border: 1px solid  var(--main-text);
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.fulltimeAndExtra {
+    display: inline-flex;
+    width: 100%;
+}
+
+.extrainfoGroup {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.extrainfo {
+    color: var(--gray-text);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.icons {
+    font-size: 18px;
+    margin-right: 6px;   
+}
