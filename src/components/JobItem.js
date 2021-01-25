@@ -24,10 +24,8 @@ const JobItem = (props) => {
                             </span>
                         </div>
                     </span>
-
                 </div>
             </div>
-
         </div>
     );
 }

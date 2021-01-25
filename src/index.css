@@ -60,6 +60,53 @@ body {
   flex-grow: 5;
 }
 
+h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--gray-text);
+  line-height: 21px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 2.2rem;
+}
+
+.apply {
+  width: 230px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--main-text);
+}
+
+.apply span {
+  color: var(--blue);
+}
+
+.apply span:hover {
+  cursor: pointer;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-right: 12px;
+  color: var(--main-text);
+}
+
+.description {
+  margin-top: 2.2rem;
+  color: var(--main-text);
+  font-size: 16px;
+  line-height: 150%;
+}
+
 .joblist {
   display: flex;
   flex-direction: column;
