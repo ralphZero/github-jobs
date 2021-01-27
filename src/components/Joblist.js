@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import JobItem from './JobItem';
+import { JobContext } from '../contexts/JobContext';
 
 const JobList = () => {
 
@@ -9,13 +10,18 @@ const JobList = () => {
         rowGap: '1.8rem' 
     }
 
+    const { state } = useContext(JobContext);
+
+    const jobitems = state.map((item) => {
+        return (
+            <JobItem key={item.id} id={item.id} company={item.company} logo={item.company_logo} title={item.title} type={item.type} location={item.location} date={item.created_at}/>
+        );
+    })
+
     return (
         <div style={style}>
             <div className='joblist'>
-                <JobItem />
-                <JobItem />
-                <JobItem />
-                <JobItem />
+                { jobitems }
             </div>
             <div className='pagination'>
                 <button className='btn-pagination'>

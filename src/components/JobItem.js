@@ -1,26 +1,36 @@
 import React from 'react';
 import sheet from './JobItem.module.css';
-import thumb from '../media/notfound.png';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
 
-const JobItem = (props) => {
+const JobItem = ({ id, company, logo, title, type, location, date }) => {
+
+    TimeAgo.addLocale(en);
+
+    const timeAgo = new TimeAgo('en-US');
+
+    const fulltime = type.toLowerCase() === 'full time' ? (
+        <span className={sheet.fulltime}>Full time</span>
+    ) : null;
+
     return (
         <div className={sheet.container}>
             <div className={sheet.imgAndJobTitle}>
-                <img src={thumb} className={sheet.img} alt='thumbnail' />
+                <img src={logo} className={sheet.img} alt='thumbnail' />
                 <div className={sheet.jobTitle}>
-                    <span>Kasisto</span>
-                    <span className={sheet.title}>Front-End Software Engineer</span>
+                    <span>{company}</span>
+                    <span className={sheet.title}>{title}</span>
                     <span className={sheet.fulltimeAndExtra}>
-                        <span className={sheet.fulltime}>Full time</span>
+                        { fulltime }
                         <div className={sheet.extrainfoGroup}>
                             <span className={sheet.extrainfo}>
                                 <span className={'material-icons ' + sheet.icons}>public</span>
-                                <span className={sheet.location}>New York</span>
+                                <span className={sheet.location}>{location}</span>
                             </span>
 
                             <span className={sheet.extrainfo}>
                                 <span className={'material-icons ' + sheet.icons}>access_time</span>
-                                <span className={sheet.location}>5 days ago</span>
+                                <span className={sheet.location}>{timeAgo.format(Date.parse(date))}</span>
                             </span>
                         </div>
                     </span>
