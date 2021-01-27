@@ -138,6 +138,12 @@ h3 {
   cursor: pointer;
 }
 
+.btn-pagination.disabled, .btn-pagination:hover.disabled{
+  border: 1px solid var(--gray-text);
+  color: var(--gray-text);
+  cursor: default;
+}
+
 .btn-pagination.selected {
   border: none;
   background-color: var(--blue);

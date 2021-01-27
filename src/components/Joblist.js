@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import JobItem from './JobItem';
 import { JobContext } from '../contexts/JobContext';
+import Pagination from './Pagination';
 
 const JobList = () => {
 
@@ -12,7 +13,7 @@ const JobList = () => {
 
     const { state } = useContext(JobContext);
 
-    const jobitems = state.map((item) => {
+    const jobitems = state.filteredData.map((item) => {
         return (
             <JobItem key={item.id} id={item.id} company={item.company} logo={item.company_logo} title={item.title} type={item.type} location={item.location} date={item.created_at}/>
         );
@@ -23,20 +24,7 @@ const JobList = () => {
             <div className='joblist'>
                 { jobitems }
             </div>
-            <div className='pagination'>
-                <button className='btn-pagination'>
-                    <span className='material-icons'>chevron_left</span>
-                </button>
-                <button className='btn-pagination selected'>
-                    <span>1</span>
-                </button>
-                <button className='btn-pagination'>
-                    <span>2</span>
-                </button>
-                <button className='btn-pagination'>
-                    <span className='material-icons'>chevron_right</span>
-                </button>
-            </div>
+            <Pagination />
         </div>
         
     );
