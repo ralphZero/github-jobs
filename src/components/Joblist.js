@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import JobItem from './JobItem';
 import { JobContext } from '../contexts/JobContext';
 import Pagination from './Pagination';
+import { useHistory } from 'react-router-dom';
 
 const JobList = () => {
 
@@ -21,11 +22,17 @@ const JobList = () => {
         fontFamily: 'Poppins, sans-serif'
     }
 
+    let history = useHistory();
+
+    const handleChangeRoute = (id) => {
+        history.push(`/${id}`)
+    }
+
     const { state } = useContext(JobContext);
 
     const jobitems = state.filteredData.map((item) => {
         return (
-            <JobItem key={item.id} id={item.id} company={item.company} logo={item.company_logo} title={item.title} type={item.type} location={item.location} date={item.created_at}/>
+            <JobItem key={item.id} onClick={handleChangeRoute} id={item.id} company={item.company} logo={item.company_logo} title={item.title} type={item.type} location={item.location} date={item.created_at}/>
         );
     });
 

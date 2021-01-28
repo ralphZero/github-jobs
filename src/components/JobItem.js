@@ -4,7 +4,7 @@ import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import thumb from '../media/notfound.png';
 
-const JobItem = ({ id, company, logo, title, type, location, date }) => {
+const JobItem = ({ id, onClick, company, logo, title, type, location, date }) => {
 
     TimeAgo.addLocale(en);
 
@@ -17,7 +17,7 @@ const JobItem = ({ id, company, logo, title, type, location, date }) => {
     const thumbnail = logo !== null ? logo : thumb;
 
     return (
-        <div className={sheet.container}>
+        <div className={sheet.container} onClick={() => onClick(id)}>
             <div className={sheet.imgAndJobTitle}>
                 <img src={thumbnail} className={sheet.img} alt='thumbnail' />
                 <div className={sheet.jobTitle}>
