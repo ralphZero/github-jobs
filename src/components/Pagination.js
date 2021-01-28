@@ -30,21 +30,22 @@ const Pagination = () => {
     
 
     const buttons = state.indexes.map((i, index) => {
+        console.log(state.indexes);
         const selected = state.currIndex === i ? 'selected' : '';
         return (
-            <button onClick={() => dispatch({ type: 'UPDATE_PAGINATION', index: i })} className={`btn-pagination ${selected}`}>
-                <span>{index}</span>
+            <button key={i} onClick={() => dispatch({ type: 'UPDATE_PAGINATION', index: i })} className={`btn-pagination ${selected}`}>
+                <span>{index + 1}</span>
             </button>
         );
     })
 
-    return (
+    return state.data.length !== 0 ? (
         <div className='pagination'>
             { prevButton}
             { buttons}
             { nextButton }
         </div>
-    );
+    ): null;
 }
 
 export default Pagination;

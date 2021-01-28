@@ -10,8 +10,8 @@ const App = () => {
       <BrowserRouter>
         <JobContextProvider>
           <Route exact path='/' component={Index} />
+          <Route path='/:id' component={JobPage} /> 
         </JobContextProvider>
-        <Route path='/:id' component={JobPage} /> 
       </BrowserRouter>
     </div>
   );

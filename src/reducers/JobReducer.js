@@ -4,8 +4,10 @@ export const JobReducer = (state, action) => {
         return {
             ...state,
             data: action.data,
+            error: action.error,
+            currIndex: 0,
             indexes: getIndexArray(action.data),
-            filteredData: getTenItemFromIndex(0, action.data)
+            filteredData: getTenItemFromIndex(0, action.data),
         }
     }
     if(action.type === 'UPDATE_PAGINATION'){
@@ -19,6 +21,24 @@ export const JobReducer = (state, action) => {
         return {
             ...state,
             location: action.location,
+            data: [],
+            error: ''
+        }
+    }
+    if(action.type === 'SET_FULLTIME') {
+        return {
+            ...state,
+            fulltime: action.value,
+            data: [],
+            error: ''
+        }
+    }
+    if(action.type === 'UPDATE_QUERY') {
+        return {
+            ...state,
+            data: [],
+            query: action.value,
+            error: ''
         }
     }
     return state;
