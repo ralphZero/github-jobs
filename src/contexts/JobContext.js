@@ -9,7 +9,6 @@ const JobContextProvider = (props) => {
     const [state, dispatch] = useReducer(JobReducer, {location: 'London', fulltime: false, data: [], error: '', currIndex: 0, indexes: [], filteredData: [], query: ''});
 
     useEffect(() => {
-        console.log('Effect ran');
         if (state.data.length === 0 && state.error === '') {
             const fulltime = state.fulltime ? '&full_time=true' : '';
             axios.get('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description='+state.query+'&location='+state.location+fulltime+'', {

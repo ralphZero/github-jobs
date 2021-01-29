@@ -23,7 +23,7 @@ const JobItem = ({ id, onClick, company, logo, title, type, location, date }) =>
                 <div className={sheet.jobTitle}>
                     <span>{company}</span>
                     <span className={sheet.title}>{title}</span>
-                    <span className={sheet.fulltimeAndExtra}>
+                    <div className={sheet.fulltimeAndExtra}>
                         { fulltime }
                         <div className={sheet.extrainfoGroup}>
                             <span className={sheet.extrainfo}>
@@ -36,7 +36,7 @@ const JobItem = ({ id, onClick, company, logo, title, type, location, date }) =>
                                 <span className={sheet.location}>{timeAgo.format(Date.parse(date))}</span>
                             </span>
                         </div>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>

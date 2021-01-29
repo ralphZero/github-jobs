@@ -25,6 +25,13 @@
     font-size: 12px;
     line-height: 14px;
     gap: 1.15rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .imgAndJobTitle {
+        gap: 10px;
+    }
 }
 
 .jobTitle {
@@ -32,6 +39,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    flex-grow: 1;
 }
 
 .title {
@@ -42,6 +50,13 @@
     max-lines: 1;
 }
 
+@media screen and (max-width: 768px)  {
+    .title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
 .fulltime {
     display: inline;
     border: 1px solid  var(--main-text);
@@ -50,9 +65,23 @@
     color: var(--main-text);
 }
 
+@media screen and (max-width: 768px) {
+    .fulltime {
+        width: fit-content;
+    }
+}
+
 .fulltimeAndExtra {
     display: inline-flex;
     width: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .fulltimeAndExtra {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .extrainfoGroup {

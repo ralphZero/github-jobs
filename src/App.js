@@ -1,6 +1,6 @@
 import React from 'react';
 import Index from './components/screens/Index';
-import JobPage from './components/screens/jobPage';
+import JobPage from './components/screens/JobPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import JobContextProvider from './contexts/JobContext';
 

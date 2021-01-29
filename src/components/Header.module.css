@@ -39,12 +39,14 @@
 }
 
 .input {
-    flex-grow: 1;
     padding: 8px 0 8px 34px;
     border: none;
     color: var(--gray-text);
     font-weight: 400;
+    width: 80%;
 }
+
+
 .input:focus {
     outline: none;
 }
@@ -58,4 +60,14 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .input {
+        width: 70%;
+    }
+
+    .button {
+        width: 30%;
+    }
 }
